@@ -1,42 +1,75 @@
 @extends('layouts.app')
 
-@section('title', 'Article List')
+@section('title', 'Welcome to Our Website')
 
 @section('content')
-    <div class="container article-detail">
-        <div class="first-line">
-            <h2>Latest News</h2>  
-            <h5 class="article-title">最新消息</h5>
-        </div>
-        <div class="row article-header">
-            <div class="col-sm-12 col-md-6 left-side">        
-                <span class="published-date">{{formatDate($article->published_date)}}</span>
-                <h3 class="article-title">{{$article->title}}</h3>
+    <div class="container product-detail">
+        <div class="row first-line">
+            <div class="col-sm-12 col-md-5 left-side">
+                <img src="{{getFullImageAddressFromAttachmentId(json_decode($product->imgs)[0])}}" alt="">
             </div>
-            <div class="col-sm-12 col-md-6 right-side">
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <div class="col-sm-12 col-md-7 right-side">
+                <div class="title">
+                    {{$product->name}}
+                </div>
+                <div class="dimension">
+                    {{$product->dimension??''}}
+                </div>
+                <div class="desc">
+                    {{$product->desc}}
+                </div>
+                <div class="add-to-shopping-cart">
+                    <a href="#" class="btn-type-01">加入詢價</a>
+                </div>
+            </div>
+        </div>
+        <div class="secont-line">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Tab1')">技術參數</button>
+                <button class="tablinks" onclick="openTab(event, 'Tab2')">內部結構</button>
+                <button class="tablinks" onclick="openTab(event, 'Tab3')">產品優勢</button>
+                <button class="tablinks" onclick="openTab(event, 'Tab4')">產品應用</button>
+            </div>
+
+            <div id="Tab1" class="tabcontent">
+                <div class="text-content">
+                    {{$product->tab_one}}
+                </div>
+                <div class="img-content">
+                    <img src="{{getFullImageAddressFromAttachmentId($product->tab_one_img)}}" alt="">
+                </div>
+            </div>
+
+            <div id="Tab2" class="tabcontent">
+                <div class="text-content">
+                    {{$product->tab_two}}
+                </div>
+                <div class="img-content">
+                    <img src="{{getFullImageAddressFromAttachmentId($product->tab_two_img)}}" alt="">
+                </div>
+            </div>
+
+            <div id="Tab3" class="tabcontent">
+                <div class="text-content">
+                    {{$product->tab_three}}
+                </div>
+                <div class="img-content">
+                    <img src="{{getFullImageAddressFromAttachmentId($product->tab_three_img)}}" alt="">
+                </div>
+            </div>
+
+            <div id="Tab4" class="tabcontent">
+                <div class="text-content">
+                    {{$product->tab_four}}
+                </div>
+                <div class="img-content">
+                    <img src="{{getFullImageAddressFromAttachmentId($product->tab_four_img)}}" alt="">
                 </div>
             </div>
         </div>
 
-        <div class="row article-content-wrapper">
-            <div class="col-sm-12 col-md-8 left-side">
-                <h3 class="article-title">
-                    {{$article->title}}
-                </h3>
-                <div class="article-content">
-                    {{$article->content}}
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4 right-side">
-                <div class="article-img">
-                    <img src="{{getFullImageAddressFromAttachmentId($article->img)}}" alt="">            
-                </div>
-            </div>
+        <div class="btn-return">
+            <a href="#" class="btn-type-01" onclick="goToPreviousPage()">返回</a>
         </div>
     </div>
-
 @endsection

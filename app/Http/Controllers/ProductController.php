@@ -24,7 +24,7 @@ class ProductController extends Controller
         $product_cates = ProductCate::with("subCates")->get();
         $article_cates = ArticleCate::all();
         $product = Product::where('id', '=', $id)->first();
-
+        // dd($product);
         return view('pages.product', compact('product_cates', 'article_cates', 'product'));
     }
 }

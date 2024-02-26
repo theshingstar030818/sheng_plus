@@ -652,10 +652,14 @@ footer {
 }
 .product-cate-detail .products-view {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 .product-cate-detail .products-view .left-side {
     display: flex;
     flex-direction: column;
+}
+.product-cate-detail .products-view .left-side {
+    text-align: center;
 }
 .product-cate-detail .products-view .left-side .sub-cate-item {
     margin-bottom: 10px;
@@ -689,4 +693,67 @@ footer {
 }
 .product-cate-detail .products-view .product:hover {
     box-shadow: 5px 5px 10px rgb(92 92 92 / 30%);
+}
+/* product detail page */
+.product-detail .first-line {
+    margin-bottom: 30px;
+}
+.product-detail .first-line .left-side img {
+    width: 100%;
+}
+.product-detail .first-line .right-side {
+    display: flex;
+    flex-direction: column;
+}
+.product-detail .first-line .right-side .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.product-detail .first-line .right-side .dimension {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.product-detail .first-line .right-side .desc {
+    margin-bottom: 15px;
+}
+.product-detail .first-line .right-side .add-to-shopping-cart {
+    max-width: 200px;
+
+}
+
+/* 4 tabs for product content */
+.product-detail .second-line .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+  
+  /* Style the buttons inside the tab */
+.product-detail .second-line .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+ }
+  
+  /* Change background color of buttons on hover */
+.product-detail .second-line .tab button:hover {
+    background-color: #ddd;
+}
+  
+  /* Create an active/current tablink class */
+.product-detail .second-line .tab button.active {
+    background-color: rgb(224, 149, 9);
+}
+  
+/* Style the tab content */
+.product-detail .second-line .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
 }

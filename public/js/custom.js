@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
         getArticleList();
     }
 
-    const parentEl02 = document.getElementsById('products_view_result');
+    const parentEl02 = document.getElementById('products_view_result');
+    console.log("addEventListener:", parentEl02);
     if (parentEl02) {
+        console.log("calling getProductList():");
+
         getProductList(0);
     }
     
@@ -154,4 +157,32 @@ function getProductList(event) {
 function goToURL(url) {
     window.location.href = url;
 }
+function goToPreviousPage() {
+    window.history.back();
+}
+
+// ----------------------------------------------------------------
+// 4 tabs for product content
+function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    console.log("openTab() called");
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
+
 // -----------------------------------------------------------------
