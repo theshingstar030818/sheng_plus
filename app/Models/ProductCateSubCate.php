@@ -19,7 +19,7 @@ class ProductCateSubCate extends Model
 
     public function productCate()
     {
-        return $this->hasOne(ProductCate::class, 'id', 'product_cate_id');
+        return $this->hasOne(ProductCate::class, 'product_cate_id', 'id');
     }
 
     public function products()

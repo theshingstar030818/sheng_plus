@@ -332,11 +332,6 @@ class ProductResource extends Resource
         return __('Edit :resource', ['resource' => static::singularLabel()]);
     }
 
-    /**
-     * Get the text for the create resource button.
-     *
-     * @return string|null
-     */
     public static function createButtonLabel(): string
     {
         return 'Create';

@@ -21,8 +21,8 @@ class ProductCate extends Model
 
     public function subCates()
     {
-        // return $this->hasMany(ProductCateSubCate::class);
-        return $this->belongsTo(ProductCateSubCate::class, 'id', 'product_cate_id');
+        return $this->hasMany(ProductCateSubCate::class, 'product_cate_id', 'id');
+        // return $this->belongsTo(ProductCateSubCate::class, 'product_cate_id', 'id');
     }
     public function articles()
     {

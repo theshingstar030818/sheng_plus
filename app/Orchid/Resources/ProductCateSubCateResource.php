@@ -104,21 +104,6 @@ class ProductCateSubCateResource extends Resource
     }
 
     /**
-     * Get the text for the create resource button.
-     *
-     * @return string|null
-     */
-    public static function createButtonLabel(): string
-    {
-        return __('Create', [
-            'resource' => static::singularLabel()
-        ]);
-        // return __('Create :resource', [
-        //     'resource' => static::singularLabel()
-        // ]);
-    }
-
-    /**
      * Get the text for the create resource toast.
      *
      * @return string
@@ -166,4 +151,29 @@ class ProductCateSubCateResource extends Resource
             'name' => 'required|string|max:500',
         ];
     }
+
+    public static function createButtonLabel(): string
+    {
+        return 'Create';
+        // return __('Create :resource', [
+        //     'resource' => static::singularLabel()
+        // ]);
+    }
+
+    public static function updateButtonLabel(): string
+    {
+        return 'Update';
+        // return __('Create :resource', [
+        //     'resource' => static::singularLabel()
+        // ]);
+    }
+
+    public static function deleteButtonLabel(): string
+    {
+        return 'Delete';
+        // return __('Create :resource', [
+        //     'resource' => static::singularLabel()
+        // ]);
+    }
+
 }
