@@ -6,7 +6,7 @@
     <div class="container about-us">
         <div class="row top-img">
             <div class="col-sm-12 col-md-12 top-img-content">
-                <img class="main-img" src="{{ asset('images/about-us/about-us.png') }}" alt="">
+                <img class="main-img" src="{{ asset('images/about-us/about-us.jpg') }}" alt="">
                 <div class="bottom-imgs-container">
                     <div class="item-wrapper">
                         <div class="item">
