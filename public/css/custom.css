@@ -169,11 +169,18 @@
     cursor: pointer;
     border-radius: 20px;
 }
+.product-cate-list-item .item-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .reversed-order .item-left-col {
     order: 5;
 }
 .product-cate-list-item .item-right-col {
-    /* text-align: right; */
+}
+.product-cate-list-item .item-right-col img {
+    width: 100%;
 }
 .reversed-order .item-right-col {
     /* text-align: left; */
