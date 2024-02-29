@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.PNG') }}" alt="Logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
                 </a>
                 <div class="address">
                     <i class="bi bi-geo-alt"></i>
@@ -14,8 +14,8 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 right-side">
-                <img src="{{ asset('images/world-map.PNG') }}" alt="" class="world-map">
-                <img src="{{ asset('images/qr-code.PNG') }}" alt="" class="qr-code">
+                <img src="{{ asset('images/world-map.png') }}" alt="" class="world-map">
+                <img src="{{ asset('images/qr-code.png') }}" alt="" class="qr-code">
             </div>
         </div>
     </div>

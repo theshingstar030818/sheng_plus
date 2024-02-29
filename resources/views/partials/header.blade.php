@@ -3,7 +3,7 @@
         <div class="container header-content">
             <div class=""></div>
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.PNG') }}" alt="Logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
             </a>
             <div class="right-menu">
                 <div class="dropdown right-menu-item">
@@ -34,7 +34,7 @@
 <div class="popup-menu" id="popupMenu">
     <span class="close-btn" onclick="closeMenu()">&times;</span>
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{ asset('images/logo.PNG') }}" alt="Logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo">
     </a>
     <div class="menu-content">
         <div class="menu-line">
