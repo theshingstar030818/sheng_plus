@@ -45,12 +45,12 @@
         </div>
         <div class="menu-line product-cates">
             <div class="left-side">
-                <a href="{{ url('/') }}" class="first-item">{{__("Products")}}</a>
+                <a href="{{ url('/') }}" class="first-item">{{__("Product List")}}</a>
             </div>
             <div class="right-side">
                 @foreach($product_cates as $record)
                     <div class="inner-line">
-                        <a href="" class="first-item">{{@$record->name}}</a>
+                        <a href="{{ url('/product-cate/'.$record->id.'/0')}}" class="first-item">{{@$record->name}}</a>
                         @if($record->subCates)
                             @foreach($record->subCates as $sub_record)
                                 <a href="" class="main-item">{{@$sub_record->name}}</a>

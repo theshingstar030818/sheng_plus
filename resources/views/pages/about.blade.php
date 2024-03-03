@@ -10,22 +10,30 @@
                 <div class="bottom-imgs-container">
                     <div class="item-wrapper">
                         <div class="item">
-                            <img src="{{ asset('images/about-us/about-us-icon-1.png') }}" alt="">
-                            <!-- <p>研磨切斷砂輪片</p> -->
+                            <a href="{{ url('/product-cate/'.'1'.'/0')}}">
+                                <img src="{{ asset('images/about-us/about-us-icon-1.png') }}" alt="">
+                                <!-- <p>研磨切斷砂輪片</p> -->
+                            </a>
                         </div>
                         <div class="item">
-                            <img src="{{ asset('images/about-us/about-us-icon-2.png') }}" alt="">
-                            <!-- <p>雷射焊接切割機</p> -->
+                            <a href="{{ url('/product-cate/'.'2'.'/0')}}">
+                                <img src="{{ asset('images/about-us/about-us-icon-2.png') }}" alt="">
+                                <!-- <p>雷射焊接切割機</p> -->
+                            </a>
                         </div>
                     </div>
                     <div class="item-wrapper">
                         <div class="item">
-                            <img src="{{ asset('images/about-us/about-us-icon-3.png') }}" alt="">
-                            <!-- <p>手持打包機</p> -->
+                            <a href="{{ url('/product-cate/'.'3'.'/0')}}">
+                                <img src="{{ asset('images/about-us/about-us-icon-3.png') }}" alt="">
+                                <!-- <p>手持打包機</p> -->
+                            </a>
                         </div>
                         <div class="item">
-                            <img src="{{ asset('images/about-us/about-us-icon-4.png') }}" alt="">
-                            <!-- <p>特殊貴金屬</p> -->
+                            <a href="{{ url('/product-cate/'.'4'.'/0')}}">
+                                <img src="{{ asset('images/about-us/about-us-icon-4.png') }}" alt="">
+                                <!-- <p>特殊貴金屬</p> -->
+                            </a>
                         </div>
                     </div>
                 </div>
