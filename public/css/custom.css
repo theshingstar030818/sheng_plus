@@ -841,3 +841,7 @@ footer {
     border: 1px solid black;
     border-top: none;
 }
+
+.font-size-22 {
+    font-size: 22px;
+}

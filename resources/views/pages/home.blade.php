@@ -8,15 +8,15 @@
         <div class="row product-cate-list-item {{$loop->index%2==1?'reversed-order':''}}">
             <div class="col-sm-12 col-md-6 item-left-col">
                 <div class="left-border-yellow">
-                    <h2 class="title">
+                    <h1 class="title">
                         {{@$product_cate->name}}
-                    </h2>
-                    <div class="description">
+                    </h1>
+                    <h4 class="description">
                         {{@$product_cate->description}}
-                    </div>
+                    </h4>
                 </div>
                 <div class="read-more">
-                    <a href="" class="btn-type-01">{{__("Read More")}}</a>
+                    <a href="" class="btn-type-01 font-size-22">{{__("Read More")}}</a>
                 </div>
                 <a href="" class="link-for-the-page">www.shengplus.com.tw.flapdisc</a>
             </div>
