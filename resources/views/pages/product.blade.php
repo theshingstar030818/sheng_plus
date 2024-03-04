@@ -18,7 +18,7 @@
 
     <div class="container product-detail">
         <div class="row first-line">
-            <div class="col-sm-12 col-md-5 left-side">
+            <div class="col-sm-12 col-md-4 left-side">
                 <div class="image-container">
                     @foreach(json_decode($product->imgs) as $img)
                         @if($loop->index == 0)
@@ -38,7 +38,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-sm-12 col-md-7 right-side">
+            <div class="col-sm-12 col-md-8 right-side">
                 <h2 class="title left-border-yellow">
                     {{$product->name}}
                 </h2>
