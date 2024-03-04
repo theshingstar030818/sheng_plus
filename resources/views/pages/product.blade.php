@@ -69,24 +69,24 @@
                 </div>
             </div>
 
-            <div id="Tab2" class="tabcontent" id="product_content_tab_two_html">
-                <div class="text-content">
+            <div id="Tab2" class="tabcontent">
+                <div class="text-content" id="product_content_tab_two_html">
                 </div>
                 <div class="img-content">
                     <img src="{{getFullImageAddressFromAttachmentId($product->tab_two_img)}}" alt="">
                 </div>
             </div>
 
-            <div id="Tab3" class="tabcontent" id="product_content_tab_three_html">
-                <div class="text-content">
+            <div id="Tab3" class="tabcontent">
+                <div class="text-content" id="product_content_tab_three_html">
                 </div>
                 <div class="img-content">
                     <img src="{{getFullImageAddressFromAttachmentId($product->tab_three_img)}}" alt="">
                 </div>
             </div>
 
-            <div id="Tab4" class="tabcontent" id="product_content_tab_four_html">
-                <div class="text-content">
+            <div id="Tab4" class="tabcontent">
+                <div class="text-content" id="product_content_tab_four_html">
                 </div>
                 <div class="img-content">
                     <img src="{{getFullImageAddressFromAttachmentId($product->tab_four_img)}}" alt="">

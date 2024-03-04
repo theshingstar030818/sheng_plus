@@ -229,7 +229,7 @@ function showImage(index) {
 // ---------------- convertTextToTable --------------------------
 
 // Function to convert text to HTML table
-// | colspan=2 => Column 1 Column 2 | Column 3 |
+// | colspan=2 : Column 1 Column 2 | Column 3 |
 // | sub column1| sub column 2 | Column 3 |
 // | -------- | -------- | -------- |
 // | Text     | Text     | Text     |
