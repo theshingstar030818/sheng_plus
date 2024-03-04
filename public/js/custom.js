@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         getProductList(0);
     }
     
+    const productDetailEl = document.getElementsByClassName('product-detail')[0];
+    if (productDetailEl) {
+        // Show the first image by default
+        showImage(0);
+        openTab(null, 'Tab1', 'product_content_tab_one');
+    }
+
     // var dropdownItems = document.querySelectorAll('.dropdown-item');
 
     // dropdownItems.forEach(function(item) {
@@ -163,7 +170,7 @@ function goToPreviousPage() {
 
 // ----------------------------------------------------------------
 // 4 tabs for product content
-function openTab(evt, tabName) {
+function openTab(evt, tabName, tabContentId) {
     // Declare all variables
     var i, tabcontent, tablinks;
     console.log("openTab() called");
@@ -181,8 +188,175 @@ function openTab(evt, tabName) {
   
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+    if (evt == null) {
+        console.log("openTab() called #1");
+        document.getElementById("Tab1").classList.add("active");
+    }
+    else {
+        console.log("openTab() called #2");
+        evt.currentTarget.classList.add("active");
+    }
+    console.log("openTab() called, tabContentId: ", tabContentId);
+
+    if (document.getElementById(tabContentId)) {
+        console.log("openTab() called #3");
+        let tab_content = document.getElementById(tabContentId).innerHTML;
+        console.log('tab_content', tab_content);
+        console.log('convertContentToHtml(tab_content)', convertContentToHtml(tab_content));
+        if (document.getElementById(tabContentId + "_html")) {
+            document.getElementById(tabContentId + "_html").innerHTML = convertContentToHtml(tab_content);
+        }    
+    }
+}
   
 
 // -----------------------------------------------------------------
+
+// --------------------- images on product ---------------------------
+function showImage(index) {
+    var images = document.getElementsByClassName('image');
+    var circles = document.getElementsByClassName('circle');
+
+    for (var i = 0; i < images.length; i++) {
+        images[i].style.display = 'none';
+        circles[i].classList.remove('active');
+    }
+
+    images[index].style.display = 'block';
+    circles[index].classList.add('active');
+}
+
+// ---------------- convertTextToTable --------------------------
+
+// Function to convert text to HTML table
+// | colspan=2 => Column 1 Column 2 | Column 3 |
+// | sub column1| sub column 2 | Column 3 |
+// | -------- | -------- | -------- |
+// | Text     | Text     | Text     |
+
+// Function to convert text to HTML table
+function convertStringToTable(text) {
+    var lines = text.trim().split('\n');
+    var html = '<table border="1">';
+
+    var isHeader = true; // Flag to indicate if we are still in the header section
+
+    lines.forEach(function(line) {
+        var cells = line.split('|').map(function(cell) {
+            return cell.trim();
+        }).filter(function(cell) {
+            return cell !== '';
+        });
+
+        if (cells[0] === '--------') {
+            // Separator line, switch to body rows
+            isHeader = false;
+        } else {
+            html += '<tr>';
+            cells.forEach(function(cell) {
+                var colspan = 1;
+                if (cell.startsWith('colspan=')) {
+                    var parts = cell.split(':');
+                    colspan = parseInt(parts[0].split('=')[1].trim(), 10);
+                    cell = parts[1].trim();
+                }
+                if (isHeader) {
+                    html += '<th' + (colspan > 1 ? ' colspan="' + colspan + '"' : '') + '>' + cell + '</th>';
+                } else {
+                    html += '<td' + (colspan > 1 ? ' colspan="' + colspan + '"' : '') + '>' + cell + '</td>';
+                }
+            });
+            html += '</tr>';
+        }
+    });
+
+    html += '</table>';
+    return html;
+}
+
+// Given string
+// var inputString = `砂布輪主要由砂布，樹脂結合劑，玻璃纖維盤，組成的研磨工具。中心有凸起可為砂布輪結構在斜角研磨時補強，讓使用者在斜角研磨安心使用。砂布輪結構具有彈性，與工件接觸時，可提供廣泛研磨面積。砂布輪可安裝在直角砂輪機，適合對廣泛材料進行輕研磨、拋光。
+// 特性:
+// - 金屬表面、弧度等研磨研磨時富銳利柔軟彈性及低消耗性，作業範圍廣操作容易
+// - 一般金屬，鐵材類，木材及非鐵類金屬，金屬焊道研磨及一般表面研磨處理`;
+
+// Function to convert the string to HTML
+function convertStringToHtml(input) {
+    var lines = input.split('\n');
+    var html = '';
+
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+
+        if (line.startsWith('-')) {
+            html += '<div class="marked-line-type-02">' + line.substring(2).trim() + '</div>';
+        } else if (i > 0 && lines[i - 1].trim().endsWith(':')) {
+            html += '<div class="marked-line-type-01">' + line + '</div>';
+        } else {
+            html += '<div>' + line + '</div>';
+        }
+    }
+
+    return html;
+}
+
+// function convertContentToHtml(input) {
+//     var rtn = "";
+//     if(multiLineString.includes("| -------- |")) {
+//         rtn = convertStringToTable(input);
+//     } else {
+
+//     }
+// }
+
+function convertContentToHtml(input) {
+    if (!input) {
+        return '';
+    }
+    const lines = input.split('\n');
+    let html = '';
+    let inTable = false;
+    let tableLines = "";
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.startsWith('|')) {
+            tableLines += "\n" + line;
+            // if (!inTable) {
+            //     html += '<table border="1">';
+            //     inTable = true;
+            // }
+            // if (line.includes('colspan')) {
+            //     html += '<tr><th colspan="' + line.match(/colspan=(\d+)/)[1] + '">' + line.split(':')[1].trim().replace(/ \|/g, '</th><th>') + '</th></tr>';
+            // } else if (line.includes('--------')) {
+            //     // Skip separator line
+            // } else {
+            //     html += '<tr><td>' + line.split('|').slice(1, -1).join('</td><td>') + '</td></tr>';
+            // }
+        } else {
+            if (tableLines.length > 0) {
+                html += convertStringToTable(tableLines);
+                tableLines = "";
+            }
+            if (inTable) {
+                html += '</table>';
+                inTable = false;
+            }
+            if (line.startsWith('- ')) {
+                html += '<div class="marked-line-type-02">' + line.substring(2) + '</div>';
+            } else if (i > 0 && lines[i - 1].trim().endsWith(':')) {
+                html += '<div class="marked-line-type-01">' + line + '</div>';
+            } else {
+                html += '<div>' + line + '</div>';
+            }
+        }
+    }
+
+    if (inTable) {
+        html += '</table>';
+    }
+
+    console.log("result of convertContentToHtml: ", html);
+    return html;
+}
+// ------------------------------------------------------

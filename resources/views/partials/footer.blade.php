@@ -1,7 +1,7 @@
 <footer class="">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-12 col-lg-6 left-side">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo">
                 </a>
@@ -13,7 +13,7 @@
                     &copy; Copyright {{ date('Y') }} Shengplus. All rights reserved.
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6 right-side">
+            <div class="col-sm-12 col-md-12 col-lg-6 right-side">
                 <img src="{{ asset('images/world-map.png') }}" alt="" class="world-map">
                 <img src="{{ asset('images/qr-code.png') }}" alt="" class="qr-code">
             </div>

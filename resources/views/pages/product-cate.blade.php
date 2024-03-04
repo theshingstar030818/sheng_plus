@@ -7,19 +7,19 @@
         <div class="top-tab">
             <div class="left-side">
                 <div class="tab-item {{$selected_tab==0?'selected':''}}">
-                    首頁
+                    <a href="{{ url('/product-cate/'.$product_cate_selected->id.'/0') }}">首頁</a>
                 </div>
                 <div class="tab-item {{$selected_tab==1?'selected':''}}">
-                    關於我們
+                    <a href="{{ url('/product-cate/'.$product_cate_selected->id.'/1') }}">關於我們</a>
                 </div>
                 <div class="tab-item {{$selected_tab==2?'selected':''}}">
-                    產品
+                    <a href="{{ url('/product-cate/'.$product_cate_selected->id.'/2') }}">產品</a>
                 </div>
                 <div class="tab-item {{$selected_tab==3?'selected':''}}">
-                    資源 
+                    <a href="{{ url('/product-cate/'.$product_cate_selected->id.'/3') }}">資源</a>
                 </div>
                 <div class="tab-item {{$selected_tab==4?'selected':''}}">
-                    最新消息
+                    <a href="{{ url('/article-list') }}">最新消息</a>
                 </div>
             </div>
             <div class="right-side">

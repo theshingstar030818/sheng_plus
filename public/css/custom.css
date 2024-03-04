@@ -1,6 +1,7 @@
 * {
     font-family: 'Arial', sans-serif;
     font-weight: 300;
+    font-size: 16px;
 }
 header .header-content {
     border: 1px solid black;
@@ -133,19 +134,21 @@ footer {
     justify-content: center;
 }
 .menu-content .menu-line .left-side .first-item {
-    font-size: 15px;    
+    font-size: 16px;
     color: black;
     margin-right: 10px;
     text-decoration: none;
+    font-weight: 500;
 } 
 .menu-content .menu-line .right-side .first-item {
     font-size: 15px;    
     color: black;
     margin-right: 10px;
     text-decoration: none;
+    font-weight: 500;
 } 
 .menu-content .menu-line .right-side .main-item {
-    font-size: 13px;
+    font-size: 15px;
     color: grey;
     margin-right: 5px;
     text-decoration: none;
@@ -169,9 +172,8 @@ footer {
     padding-left: 15px;
 }
 .product-cate-list .product-cate-list-item {
-    /* margin-bottom: 45px; */
-    padding-top: 20px;
     border-top: 1px solid #ebebeb;
+    padding: 20px 45px 0px;
 }
 .product-cate-list .product-cate-list-item:hover {
     box-shadow: 5px 5px 10px rgb(92 92 92 / 30%);
@@ -186,9 +188,10 @@ footer {
     background: #f7b115;
     color: white;
     text-decoration: none;
-    padding: 10px 35px;
+    padding: 8px 40px;
     cursor: pointer;
-    border-radius: 20px;
+    font-weight: 500;
+    border-radius: 32px;
 }
 .product-cate-list-item .item-left-col {
     display: flex;
@@ -593,11 +596,15 @@ footer {
 
 /* product category detail page */
 .product-cate-detail {
-
 }
 .product-cate-detail .top-tab {
     display: flex;
     justify-content: space-between;
+}
+.product-cate-detail .top-tab a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }
 .product-cate-detail .left-side {
     display: flex;
@@ -737,6 +744,10 @@ footer {
     box-shadow: 5px 5px 10px rgb(92 92 92 / 30%);
 }
 /* product detail page */
+.product-detail {
+    border: 1px solid black;
+    border-top: none;
+}
 .product-detail .first-line {
     margin-bottom: 30px;
 }
@@ -748,7 +759,7 @@ footer {
     flex-direction: column;
 }
 .product-detail .first-line .right-side .title {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -758,10 +769,15 @@ footer {
 }
 .product-detail .first-line .right-side .desc {
     margin-bottom: 15px;
+    font-size: 20px;
 }
 .product-detail .first-line .right-side .add-to-shopping-cart {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+}
+.product-detail .first-line .right-side .add-to-shopping-cart a {
     max-width: 200px;
-
 }
 
 /* 4 tabs for product content */
@@ -844,4 +860,107 @@ footer {
 
 .font-size-22 {
     font-size: 22px;
+}
+
+footer .left-side {
+    padding-left: 30px;
+    padding-top: 15px;
+}
+footer .right-side {
+    padding-left: 30px;
+    padding-bottom: 15px;
+}
+
+/* image slide with circle at the bottom of image */
+.image-container {
+    position: relative;
+    /* width: 300px; */
+    /* height: 200px; */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: none; /* Hide all images initially */
+}
+
+.circle-container {
+    bottom: 10px;
+    left: 50%;
+    text-align: center;
+}
+
+.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.circle.active {
+    background-color: blue; /* Highlight the active circle */
+}
+/* ------------------------------------------ */
+.product-detail .tabcontent {
+    padding: 30px !important;
+}
+.product-detail .tabcontent table {
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product-detail .tabcontent table {
+    border: 1px solid black;
+}
+.product-detail .tabcontent table td {
+    border: 1px solid #000; /* Cell border */
+    padding: 10px; /* Cell padding */
+    background-color: #fff; /* Cell background color */
+}
+.product-detail .tabcontent table th {
+    border: 1px solid #000;
+    padding: 10px;
+    background-color: #142f5c;
+    color: white;
+    text-align: center;
+}
+.product-detail .tabcontent table td {
+    border: 1px solid #000;
+    padding: 10px;
+    /* background-color: #142f5c;
+    color: white; */
+    text-align: center;
+}
+.product-detail .btn-return {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.product-detail .btn-return a {
+    background: #f7b115;
+    color: white;
+    text-decoration: none;
+    padding: 13px 42px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 32px;
+}
+.product-detail .second-line .tab {
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.product-detail .second-line .tab .tablinks.active {
+    background:rgb(247 177 21);
+}
+.product-detail .second-line .tab button {
+
+}
+.marked-line-type-01 {
+
 }
