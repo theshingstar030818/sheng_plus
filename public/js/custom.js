@@ -255,15 +255,21 @@ function convertStringToTable(text) {
             html += '<tr>';
             cells.forEach(function(cell) {
                 var colspan = 1;
+                var rowspan = 1;
                 if (cell.startsWith('colspan=')) {
                     var parts = cell.split(':');
                     colspan = parseInt(parts[0].split('=')[1].trim(), 10);
                     cell = parts[1].trim();
                 }
+                if (cell.includes('rowspan=')) {
+                    var parts = cell.split(':');
+                    rowspan = parseInt(parts[0].split('=')[1].trim(), 10);
+                    cell = parts[1].trim();
+                }
                 if (isHeader) {
-                    html += '<th' + (colspan > 1 ? ' colspan="' + colspan + '"' : '') + '>' + cell + '</th>';
+                    html += '<th' + (colspan > 1 ? ' colspan="' + colspan + '"' : '') + (rowspan > 1 ? ' rowspan="' + rowspan + '"' : '') + '>' + cell + '</th>';
                 } else {
-                    html += '<td' + (colspan > 1 ? ' colspan="' + colspan + '"' : '') + '>' + cell + '</td>';
+                    html += '<td' + (colspan > 1 ? ' colspan="' + colspan + '"' : '') + (rowspan > 1 ? ' rowspan="' + rowspan + '"' : '') + '>' + cell + '</td>';
                 }
             });
             html += '</tr>';
