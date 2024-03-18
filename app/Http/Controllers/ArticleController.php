@@ -56,6 +56,7 @@ class ArticleController extends Controller
         }
 
         $articles = $query->get();
+        
         // dd($articles);
         return view('pages.articles-template', compact('articles'));
         // return response()->view('pages.articles-template', compact('articles'))->header('Content-Type', 'text/html');
