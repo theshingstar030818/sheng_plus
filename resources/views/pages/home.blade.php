@@ -3,16 +3,17 @@
 @section('title', 'Welcome to Our Website')
 
 @section('content')
-    <div>
-        I am a developer for this website. I lost my phone (whatsapp), so I could not contact to you.
-        Here is my skype and email. Add me or send email to me. Sorry.
-        <strong>
-        skype:  live:.cid.146fcb5276d98dcf
-        email: guruilya86@gmail.com
-        </strong>
-    </div>
-
     <div class="container product-cate-list">
+        
+        <div>
+            I am a developer for this website. I lost my phone (whatsapp), so I could not contact to you.
+            Here is my skype and email. Add me or send email to me. Sorry.
+            <strong>
+            skype:  live:.cid.146fcb5276d98dcf
+            email: guruilya86@gmail.com
+            </strong>
+        </div>
+
         @foreach($product_cates as $product_cate)
         <div class="row product-cate-list-item {{$loop->index%2==1?'reversed-order':''}}">
             <div class="col-sm-12 col-md-6 item-left-col">
